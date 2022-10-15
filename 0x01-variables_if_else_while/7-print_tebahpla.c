@@ -7,12 +7,14 @@
  */
 int main(void)
 {
-	/* variable ch also works as the incrementing factor*/
 	char ch;
+	
+	ch = 'z';
 
-	for (ch = 'z'; ch >= 'a'; ch--)
+	while(ch >= 'a')
 	{
 		putchar(ch);
+		ch--;
 	}
 	putchar('\n');
 	return (0);
