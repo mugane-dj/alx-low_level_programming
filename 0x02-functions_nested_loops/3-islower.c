@@ -3,8 +3,8 @@
 /**
  * _islower - entry point
  *
- * Desc: Check if a character is lowercase
- * Return: 1 if c is lowercase or 0 is otherwise
+ * Desc: Checks if a character is lowercase
+ * Return: 1 if c is lowercase or 0 if otherwise
  */
 
 int _islower(int c)
