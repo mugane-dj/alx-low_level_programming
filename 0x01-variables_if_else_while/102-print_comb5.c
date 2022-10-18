@@ -23,8 +23,8 @@ int main(void)
 			putchar((n2 % 10) + '0');
 			n2++;
 
-			if (n2 == 99 && n1 == 98)
-				continue;
+			if (n2 >= 98 && n1 == 98)
+				break;
 
 			putchar(',');
 			putchar(' ');
