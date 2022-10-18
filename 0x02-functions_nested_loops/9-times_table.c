@@ -18,11 +18,12 @@ void times_table(void)
 		while (multiple <= 9)
 		{
 			product = (n * multiple);
-
-			_putchar(product + '0');
 			multiple++;
 
-			if (product <= 9)
+			if (multiple == 0)
+				_putchar(product + '0');
+
+			else if(product <= 9)
 			{
 				_putchar(',');
 				_putchar(' ');
