@@ -3,19 +3,22 @@
 
 /**
  * _abs - entry point
- * @int: integer to be computed
+ * @n: integer to be computed
+ *
  * Desc: Ouput's the absolute value of an integer
  * Return: Always 0
  */
 
 int _abs(int)
 {
-	if (int >= 0)
+	int n;
+
+	if (n >= 0)
 	{
-		return (int);
+		return (n);
 	}
-	else if (int < 0)
+	else if (n < 0)
 	{
-		return (-int);
+		return (-n);
 	}
 }
