@@ -20,6 +20,7 @@ void times_table(void)
 			product = (n * multiple);
 
 			_putchar(product + '0');
+			multiple++;
 
 			if (product <= 9)
 			{
@@ -36,6 +37,7 @@ void times_table(void)
 				_putchar((product % 10) + '0');
 			}
 		}
+		n++;
 		_putchar('\n');
 	}
 
