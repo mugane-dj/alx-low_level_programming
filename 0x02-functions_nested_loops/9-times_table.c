@@ -9,7 +9,7 @@
 void times_table(void)
 {
 	int n = 0;
-	int mutliple;
+	int multiple;
 	int product;
 
 	while (n <= 9)
