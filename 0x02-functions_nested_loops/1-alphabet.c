@@ -4,7 +4,6 @@
  * print_alphabet - entry point
  *
  * Desc: prints the alphabet in lowercase
- * Return: Always 0
  */
 
 void print_alphabet(void)
@@ -18,6 +17,4 @@ void print_alphabet(void)
 	}
 
 	_putchar('\n');
-
-	return (0);
 }
