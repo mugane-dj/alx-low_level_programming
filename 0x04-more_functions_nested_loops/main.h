@@ -28,4 +28,11 @@ int _isdigit(int c);
 
 int mul(int a, int b);
 
+/**
+*print_numbers - prints all numbers between 0 and 9
+*/
+
+void print_numbers(void);
+
+int _putchar(char c);
 #endif
