@@ -29,10 +29,13 @@ int main(void)
 			printf("%d", n);
 		}
 
-		putchar(' ');
+		if (n == 100)
+			continue;
+
+		printf(" ");
 	}
 
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }
