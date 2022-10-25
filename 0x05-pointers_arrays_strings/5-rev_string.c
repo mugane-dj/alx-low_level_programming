@@ -1,23 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-
-/**
-* @l: The character to write
-*
-* Desc: writes a character l to stdout
-* Return: 1 on success and -1 on error
-*/
-
-int _putchar(char c)
-{
-	 return (write(1, &c, 1));
-}
-/**
-* _strlen - prints the length of a string
-*
-* @s: pointer to the string
-* Return: length of string
-*/
 
 int _strlen(char *s)
 {
