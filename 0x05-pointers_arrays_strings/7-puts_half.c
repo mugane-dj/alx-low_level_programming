@@ -18,10 +18,10 @@ int _strlen(char *s)
 }
 
 /**
-* puts_half - prints the second half of a string followed by a new line
+* puts_half - prints the second half of a string followed by a new line.
 *
-* @str: string to be printed
-* Return: void
+* @str: pointer to the string to be printed.
+* Return: void.
 */
 
 void puts_half(char *str)
