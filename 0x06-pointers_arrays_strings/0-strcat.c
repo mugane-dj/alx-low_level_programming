@@ -15,7 +15,8 @@ char *_strcat(char *dest, char *src)
 
 	/**
 	* loop over the dest string to determine
-	* the length of the string
+	* the length of the string to be the starting
+	* point to concat src string
 	*/
 
 	for (index_1 = 0; dest[index_1] != '\0'; index_1++)
