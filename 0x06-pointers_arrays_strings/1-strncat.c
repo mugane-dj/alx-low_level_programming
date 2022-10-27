@@ -28,7 +28,7 @@ char *_strncat(char *dest, char *src, int n)
 	* reference index
 	*/
 	
-	for (index_2 = 0; src[index_2] && index_2 < n; index_2++)
+	for (index_2 = 0; src[index_2] != '\0' && index_2 < n; index_2++)
 	{
 		dest[index_1] = src[index_2];
 		index_1++;
