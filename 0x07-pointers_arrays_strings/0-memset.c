@@ -12,16 +12,11 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 
-	/* set condition for n != 0 bytes*/
+	unsigned int i;
 
-	for (; n != 0; n--)
+	for (i = 0; i < n && n != 0; i++)
 	{
-		/**
-		 * increment the pointer to s to point to
-		 * the next block in memory.
-		 */
-
-		*s++ = b;
+		s[i] = b;
 	}
 
 	return (s);
