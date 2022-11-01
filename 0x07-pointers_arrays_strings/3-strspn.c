@@ -5,7 +5,7 @@
 *
 * @s: pointer to string.
 * @accept: pointer to substring.
-* Return: number of bytes in the initial segment of s 
+* Return: number of bytes in the initial segment of s
 * which consist only of bytes from accept.
 */
 
