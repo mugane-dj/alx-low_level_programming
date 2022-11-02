@@ -27,7 +27,7 @@ void print_diagsums(int *a, int size)
 		}
 
 		/*sum for leading diagonal*/
-		a = a - size
+		a = a - size;
 		i = 0;
 		while (i < size)
 		{
