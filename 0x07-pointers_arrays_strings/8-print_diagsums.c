@@ -21,18 +21,18 @@ void print_diagsums(int *a, int size)
 		/*sum for main diagonal*/
 		while (i < size)
 		{
-			main += a[i];
-			a += size;
+			main = main + a[i];
+			a = a + size;
 			i++;
 		}
 
 		/*sum for leading diagonal*/
-		a -= size;
+		a = a - size
 		i = 0;
 		while (i < size)
 		{
-			leading += a[i];
-			a -= size;
+			leading = leading + a[i];
+			a = a - size;
 			i++;
 		}
 	}
