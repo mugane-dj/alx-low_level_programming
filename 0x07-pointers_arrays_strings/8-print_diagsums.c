@@ -12,26 +12,30 @@
 
 void print_diagsums(int *a, int size)
 {
-	int x, y, z;
-	int median, sum;
+	int i = 0;
+	int main = 0;
+	int leading = 0;
 
-	if (size != 0)
+	if (size > 0)
 	{
-		x = a[size - 1];
-		z = a[0];
-		median = (size + 1) / 2;
-
-		if (size % 2 == 0)
+		/*sum for main diagonal*/
+		while (i < size)
 		{
-			y = a[median];
+			main += a[i];
+			a += size;
+			i++;
 		}
-		else
+
+		/*sum for leading diagonal*/
+		a -= size;
+		i = 0;
+		while (i < size)
 		{
-			y = a[(size / 2) + (size / 2 + 1)];
+			leading += a[i];
+			a -= size;
+			i++;
 		}
 	}
 
-	sum = x + y + z;
-
-	printf("%d\n", sum);
+	printf("%d, %d\n", main, leading);
 }
