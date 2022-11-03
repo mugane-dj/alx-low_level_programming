@@ -9,11 +9,12 @@
 
 void _print_rev_recursion(char *s)
 {
+	/*Recursion needs to be a non-tail recursion*/
+
 	if (*s)
 	{
 		/*access memeory address of subsequent character*/
 		_print_rev_recursion(&(s[1]));
-
 		_putchar(*s);
 	}
 }
