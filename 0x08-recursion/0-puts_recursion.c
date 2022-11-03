@@ -9,6 +9,8 @@
 
 void _puts_recursion(char *s)
 {
+	/*Recursion needs to be a tail recursion*/
+
 	if (*s)
 	{
 		_putchar(*s);
