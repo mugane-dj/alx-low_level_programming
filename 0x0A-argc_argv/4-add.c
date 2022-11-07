@@ -10,13 +10,13 @@
 *         boolean false is its not.
 */
 
-bool is_number(char *argvv)
+bool is_number(char *argv)
 {
 	int index;
 
-	for (index = 0; argvv[index]; index++)
+	for (index = 0; argv[index]; index++)
 	{
-		if (argvv[index] >= '0' && argvv[index] <= '9')
+		if (argv[index] >= '0' && argv[index] <= '9')
 			return (1);
 	}
 
