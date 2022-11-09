@@ -19,17 +19,21 @@ char *create_array(unsigned int size, char c)
 	/*typecast unsigned int size to int*/
 	int j = size;
 
-	ar = malloc(size * sizeof(char));
+	if (size == 0)
+		return (NULL);
+	else
+		{
+			ar = malloc(size * sizeof(char));
 
-	if (ar == NULL)
-	{
-		fprintf(stderr, "Not enough memory left!\n");
-	}
-	while (i < j)
-	{
-		ar[i] = c;
-		i++;
-	}
+			if (ar == NULL)
+				fprintf(stderr, "Not enough memory left!\n");
+
+			while (i < j)
+			{
+				ar[i] = c;
+				i++;
+			}	
+		}	
 
 	return (ar);
 }
