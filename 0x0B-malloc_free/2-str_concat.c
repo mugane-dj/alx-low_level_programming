@@ -45,7 +45,7 @@ char *str_concat(char *s1, char *s2)
 
 	len = _strlen(s1) + _strlen(s2);
 
-	ar = malloc(len * sizeof(char));
+	ar = malloc((len + 1) * sizeof(char));
 
 	if (ar == NULL)
 		return (NULL);
