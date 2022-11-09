@@ -21,19 +21,17 @@ char *create_array(unsigned int size, char c)
 
 	if (size == 0)
 		return (NULL);
-	else
-		{
-			ar = malloc(size * sizeof(char));
 
-			if (ar == NULL)
-				fprintf(stderr, "Not enough memory left!\n");
+	ar = malloc(size * sizeof(char));
 
-			while (i < j)
-			{
-				ar[i] = c;
-				i++;
-			}	
-		}	
+	if (ar == NULL)
+		return (NULL);
+
+	while (i < j)
+	{
+		ar[i] = c;
+		i++;
+	}		
 
 	return (ar);
 }
