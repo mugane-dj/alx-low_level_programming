@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
 * create_array - creates an array of chars.
@@ -18,19 +19,16 @@ char *create_array(unsigned int size, char c)
 	/*typecast unsigned int size to int*/
 	int j = size;
 
-	if (size == 0)
-	{
-		return (NULL);
-	}
-	else
-	{
-		ar = malloc(size * sizeof(char));
+	ar = malloc(size * sizeof(char));
 
-		while (i < j)
-		{
-			ar[i] = c;
-			i++;
-		}
+	if (ar == NULL)
+	{
+		fprintf(stderr, "Not enough memory left!\n");
+	}
+	while (i < j)
+	{
+		ar[i] = c;
+		i++;
 	}
 
 	return (ar);
