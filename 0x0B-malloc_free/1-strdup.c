@@ -33,10 +33,10 @@ char *_strdup(char *str)
 	char *ar;
 	int i, len;
 
-	len = _strlen(str);
-
 	if (str == NULL)
 		return (NULL);
+
+	len = _strlen(str);
 
 	/*len + 1 since we use indexing for duplication*/
 	ar = malloc((len + 1) * sizeof(char));
