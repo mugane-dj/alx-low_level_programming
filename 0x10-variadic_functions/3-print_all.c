@@ -68,11 +68,10 @@ void print_string(va_list arg)
 
 	printf("%s", c);
 }
-	
+
 /**
 * print_all - prints anything.
 *
-* @char: char pointer.
 * @format: type of arguments passed.
 * Return: void.
 */

@@ -2,6 +2,13 @@
 #define _VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
 
+/**
+* struct print - type describing print.
+*
+* @symbol: symbol representing operation.
+* @print: print function.
+*/
+
 typedef struct print
 {
 	char *symbol;
