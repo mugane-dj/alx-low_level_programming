@@ -96,7 +96,7 @@ void print_all(const char * const format, ...)
 	{
 		y = 0;
 
-		while (y < 4 && (*(format + x) != ops[y]->symbol))
+		while (y < 4 && (*(format + x) != *(ops[y].symbol)))
 			y++;
 
 		if (y < 4)
