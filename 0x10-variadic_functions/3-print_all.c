@@ -56,17 +56,17 @@ void print_float(va_list arg)
 
 void print_string(va_list arg)
 {
-	char *c;
+	char *str;
 
-	c = va_arg(arg, char *);
+	str = va_arg(arg, char *);
 
-	if (c == NULL)
+	if (str == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
 
-	printf("%s", c);
+	printf("%s", str);
 }
 
 /**
