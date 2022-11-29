@@ -1,2 +1,2 @@
-This repository includes practice exercises for creating printf functions
-using various format and conversion specifiers.
+# alx-low_level_programming
+Low level programming concepts and algorithms in C
