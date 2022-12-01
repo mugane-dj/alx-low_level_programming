@@ -14,7 +14,10 @@ int pop_listint(listint_t **head)
 	listint_t *node;
 	int data;
 
-	if (head == NULL)
+	/**
+	 * check if head pointer is NULL or 
+	 * if the node it points to is NULL*/
+	if (head == NULL || *head == NULL)
 		return (0);
 
 	/*set node to old head*/
