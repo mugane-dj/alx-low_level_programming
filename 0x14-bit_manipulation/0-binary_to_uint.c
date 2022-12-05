@@ -26,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	 * Check if binary string is empty or too long
 	 * to be represented as an unsigned int.
 	 */
-	if (len == 0 || len > sizeof(unsigned int) * 8)
+	if (len == 0)
 		return (0);
 
 	/*Iterate over char string*/
