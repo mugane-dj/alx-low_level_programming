@@ -28,8 +28,11 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		fd = open(filename, O_TRUNC | O_WRONLY);
 
-	for (index = 0; text_content[index]; index++)
-		;
+	if (text_content != NULL)
+	{
+		for (index = 0; text_content[index]; index++)
+			;
+	}
 
 	count = write(fd, text_content, index);
 
