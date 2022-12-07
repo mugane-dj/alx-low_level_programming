@@ -45,8 +45,8 @@ char *allocate_mem(char *file_name)
 
 	if (buff == NULL)
 	{
-		dprintf(STDERR_FILENO, 
-				"Error: Can't write to %s\n", 
+		dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n",
 				file_name);
 		exit(99);
 	}
@@ -58,22 +58,17 @@ char *allocate_mem(char *file_name)
  * main - copies contents in one file to another file.
  *
  * @argc: number of arguments passed to the program.
- * argv: Array pointer to file names passed to the program.
+ * @argv: Array pointer to file names passed to the program.
  * Return:
  *	97 if the number of arguments is not 3.
  *	98 if the file with text content doesn't exist.
  *	99 if the program can't create or write to second file.
- *	100 if the program can't close the file descriptor. 
+ *	100 if the program can't close the file descriptor.
  */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, fd, count;
 	char *buff;
-
-	buff = allocate_memory(argv[2]);
-	file_from = open(argv[1], O_RDONLY);
-	fd = read(file_from, buff, 1024);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (argc != 3)
 	{
@@ -82,4 +77,32 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
+	buff = allocate_mem(argv[2]);
+	file_from = open(argv[1], O_RDONLY);
+	fd = read(file_from, buff, 1024);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
+	if (file_from == -1 || fd == -1)
+	{
+		dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
+		free(buff);
+		exit(98);
+	}
+
+	count = write(file_to, buff, fd);
+
+	if (file_to == -1 || count == -1)
+	{
+		dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
+		free(buff);
+		exit(99);
+	}
+
+	free(buff);
+	terminate_fd(file_from);
+	terminate_fd(file_to);
+
+	return (0);
+}
