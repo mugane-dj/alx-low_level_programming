@@ -8,7 +8,7 @@
 
 #include <stddef.h>
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output.
+ * read_textfile - reads a text file and prints it to standard output.
  *
  * @filename: name of file to do I/O operations on.
  * @letters: number of letters to be read and printed.
@@ -17,8 +17,8 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t count;
-	char buff[letters];
+	ssize_t count, read_out;
+	char *buff = NULL;
 	int fd;
 
 	if (filename == NULL)
@@ -28,14 +28,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fd == -1)
 		return (0);
-		
-	read(fd, buff, letters);
 
-	count = write(fd, buff, letters);
+	buff = malloc(sizeof(*buff) * letters);
+	if (buff == NULL)
+		return (0);
+
+	read_out = read(fd, buff, letters);
+	if (read_out == -1)
+		return (0);
+
+	count = write(STDOUT_FILENO, buff, letters);
 
 	if (count == -1)
 		return (0);
-	
+
+	free(buff);
 	close(fd);
 
 	return (count);
