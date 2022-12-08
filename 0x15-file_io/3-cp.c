@@ -74,18 +74,13 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO,
-				"Usage: cp file_from file_to");
+				"Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	buff = allocate_mem(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	fd = read(file_from, buff, BUFFER_SIZE);
-	
-	if (fd > BUFFER_SIZE)
-	{
-		_putchar("...[Diff had to be removed because it was too long]\n");
-	}
 	
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
