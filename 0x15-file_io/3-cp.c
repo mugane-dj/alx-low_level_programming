@@ -81,6 +81,12 @@ int main(int argc, char *argv[])
 	buff = allocate_mem(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	fd = read(file_from, buff, BUFFER_SIZE);
+	
+	if (fd > BUFFER_SIZE)
+	{
+		_putchar("...[Diff had to be removed because it was too long]\n");
+	}
+	
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (file_from == -1 || fd == -1)
