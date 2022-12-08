@@ -11,20 +11,6 @@
 
 #define BUFFER_SIZE 1024
 
-char *strcat(char *dest, const char *src)
-{
-	char *end = dest;
-	while (*end)
-		end++;
-
-	while (*src)
-		*end++ = *src++;
-
-	*end = '\0';
-
-	return dest;
-}
-
 /**
  * terminate_fd - close file descriptor.
  *
@@ -96,11 +82,6 @@ int main(int argc, char *argv[])
 	buff = allocate_mem(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	fd = read(file_from, buff, BUFFER_SIZE);
-
-	if (fd > BUFFER_SIZE)
-	{
-		strcat(buff, " ... [Diff had to be removed because it was too long]");
-	}
 
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
