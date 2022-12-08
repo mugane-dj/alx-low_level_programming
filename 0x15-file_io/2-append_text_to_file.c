@@ -29,7 +29,7 @@ int append_text_to_file(const char *filename, char *text_content)
 			;
 	}
 
-	fd = open(filename, O_WRONLY | O_APPEND);
+	fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, S_IRUSR | S_IWUSR);
 
 	count = write(fd, text_content, index);
 
