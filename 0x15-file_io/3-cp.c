@@ -9,6 +9,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
+#define BUFFER_SIZE 1024
 /**
  * terminate_fd - close file descriptor.
  *
@@ -41,7 +42,7 @@ char *allocate_mem(char *file_name)
 {
 	char *buff;
 
-	buff = malloc(sizeof(*buff) * 1024);
+	buff = malloc(sizeof(char) * BUFFER_SIZE);
 
 	if (buff == NULL)
 	{
@@ -79,7 +80,7 @@ int main(int argc, char *argv[])
 
 	buff = allocate_mem(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
-	fd = read(file_from, buff, 1024);
+	fd = read(file_from, buff, BUFFER_SIZE);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (file_from == -1 || fd == -1)
