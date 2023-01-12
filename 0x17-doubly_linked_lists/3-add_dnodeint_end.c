@@ -24,18 +24,18 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	/*find the previous node pointed to by the tail*/
 	if (*head == NULL)
 	{
-		*head = new_node;
 		new_node->prev = NULL;
+		*head = new_node;
 	}
 	else
 	{
 		last_node = *head;
 
-		while (last_node->next != NULL)
+		while (last_node->next)
 			last_node = last_node->next;
 
 		last_node->next = new_node;
-		last_node->next->prev = new_node->prev;
+		new_node->prev = last_node;
 	}
 
 	return (new_node);
