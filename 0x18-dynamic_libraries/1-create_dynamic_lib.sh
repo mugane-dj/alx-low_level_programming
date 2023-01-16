@@ -1,17 +1,13 @@
 #!/bin/bash
 
 echo "Converting source code to machine code..."
-gcc -c *.c
+gcc -c -fPIC *.c
 
-echo "Creating static library from object code..."
-ar -rcs liball.a *.o
-sleep 2
-
-echo "Creating dynamic library from static library..."
-gcc -shared -o liball.so liball.a
+echo "Creating dynamic library from object code..."
+gcc -shared -o liball.so *.o
 
 echo "Display symbol table for dynamic library..."
-nm -D --defined-only liball.so
+nm -D liball.so
 sleep 2
 
 echo "Done!"
