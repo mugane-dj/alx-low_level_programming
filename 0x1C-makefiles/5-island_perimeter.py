@@ -3,8 +3,8 @@
 
 
 def island_perimeter(grid):
-    """ Calculate the perimeter of an island 
-    
+    """ Calculate the perimeter of an island
+
     The grid represents a 2D list made up of 0 and 1.
     0 represents a water zone.
     1 represent a land zone.
@@ -20,16 +20,16 @@ def island_perimeter(grid):
             cell = False
             if grid[row][col] == 1:
                 cell = True
-                #Top
+                # Top
                 if row == 0 or grid[row - 1] == 0:
                     length += 1
-                #Right
+                # Right
                 if col == cols - 1 or grid[row][col + 1] == 0:
                     width += 1
-                #Bottom
+                # Bottom
                 if row == rows - 1 or grid[row + 1][col] == 0:
                     length += 1
-                #Left
+                # Left
                 if col == 0 or grid[col - 1] == 0:
                     width += 1
             cell = False
