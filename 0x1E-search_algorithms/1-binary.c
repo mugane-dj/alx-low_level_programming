@@ -43,10 +43,10 @@ int binary_search(int *array, size_t size, int value)
 	int right_sub;
 	size_t mid;
 
-	print_array(array, size);
+
 	if (size == 0)
 		return (-1);
-
+	print_array(array, size);
 	mid = size / 2;
 	if (array[mid] == value)
 		return (mid);
