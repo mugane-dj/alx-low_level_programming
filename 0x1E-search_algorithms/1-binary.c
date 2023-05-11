@@ -47,7 +47,7 @@ int binary_search_recursive(int *array, size_t left, size_t right, int value)
 	if (left > right)
 		return (-1);
 
-	mid = left + (right - left) / 2;
+	mid = (left + right) / 2;
 
 	if (array[mid] == value)
 		return (mid);
